@@ -1,0 +1,16 @@
+{% url 'post_list' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Simple Blog{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+</head>
+<body>
+    <nav>
+        <a href="{% url 'post_list' %}">Home</a>
+        <a href="{% url 'post_new' %}">Add New Post</a>
+    </nav>
+    {% block content %}{% endblock %}
+</body>
+</html>

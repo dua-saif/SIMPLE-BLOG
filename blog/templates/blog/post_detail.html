@@ -1,0 +1,25 @@
+ {% url 'add_post' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ post.title }} - Simple Blog</title>
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+</head>
+<body>
+    <div class="container post-detail">
+        <h1>{{ post.title }}</h1>
+        <p class="meta">Published on {{ post.date|date:"M d, Y H:i" }}</p>
+        <div class="content">
+            {{ post.content|linebreaks }}
+        </div>
+
+        <!-- BACK BUTTON LOWER -->
+        <a href="{% url 'post_list' %}" class="back-link">Back to all posts</a>
+
+        
+    </div>
+</body>
+</html>
+
+

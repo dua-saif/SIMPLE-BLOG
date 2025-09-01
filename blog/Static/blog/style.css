@@ -1,0 +1,285 @@
+:root {
+    --dark-blue-bg: hwb(240 0% 0%);
+    --page-bg: #1b3b5a;  /* dark blue page background */
+    --yellow-text: #ffd700;
+    --green-date: yellowgreen;
+    --light-blue: #4da6ff;
+}
+
+/* Global page style */
+html, body {
+    margin: 0; padding: 0;
+    font-family: Arial, sans-serif;
+    background: var(--page-bg);
+    color: var(--yellow-text);
+}
+
+/* Headings (including post titles) */
+h1, h2, h3, h4, h5, h6 {
+    color: white; /* Post headings white */
+}
+
+/* Container for content */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.07);
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+/* Navigation */
+nav {
+    background: var(--page-bg);
+    padding: 15px 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+    margin-bottom: 30px;
+}
+
+/* All links styled as yellow buttons on transparent background */
+a, a:link, a:visited {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--yellow-text);
+    padding: 8px 16px;
+    border: 2px solid var(--yellow-text);
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 0 6px 6px 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a:hover, a:focus {
+    background-color: var(--yellow-text);
+    color: var(--page-bg);
+}
+
+/* BUTTONS: Normal blue background with yellow font */
+button, .btn,
+.view-post-btn,
+.back-link {
+    background-color: var(--dark-blue-bg);
+    color: var(--yellow-text);
+    border: 2px solid var(--yellow-text);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0 6px 6px 0;
+    box-sizing: border-box;
+    text-decoration: none; /* For links */
+    display: inline-block;  /* For links */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for all buttons */
+button:hover, 
+.btn:hover, 
+.view-post-btn:hover, 
+.back-link:hover {
+    background-color: var(--yellow-text);
+    color: var(--dark-blue-bg);
+}
+
+/* Post listing container */
+.post-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 18px;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* Post titles white */
+.post-item h2 {
+    margin: 0 0 8px 0;
+    color: white;
+}
+
+/* Post meta/date in green */
+.post-item .meta, 
+.post-detail .meta, 
+.post-detail p em, 
+.post-detail .post-date {
+    color: var(--green-date);
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+}
+
+/* Post detail container */
+.post-detail {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    color: white; /* Post details text white */
+}
+
+/* Post detail content */
+.post-detail .content {
+    margin-top: 12px;
+    line-height: 1.7;
+    color: white; /* Ensure white text */
+}
+
+/* Add New Post form */
+.blog-form {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 18px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 8px;
+}
+
+/* Form labels */
+.blog-form label {
+    display: block;
+    color: var(--yellow-text);
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+/* Form inputs */
+.blog-form input[type="text"],
+.blog-form textarea,
+.blog-form select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: #ffffff;
+    color: var(--dark-blue-bg);
+    margin-bottom: 12px;
+    box-sizing: border-box;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+    .container, nav, .blog-form {
+        margin: 18px;
+        padding: 16px;
+    }
+    a, button, .btn, .view-post-btn, .back-link {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+}
+
+/* Style anchor buttons same as .btn */
+a.btn, a.view-post-btn, a.back-link {
+    background-color: var(--dark-blue-bg);
+    color: var(--yellow-text);
+    border: 2px solid var(--yellow-text);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0 6px 6px 0;
+    display: inline-block;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a.btn:hover, a.view-post-btn:hover, a.back-link:hover {
+    background-color: var(--yellow-text);
+    color: var(--dark-blue-bg);
+}
+
+/* Heading 1 "All Blog Posts" in yellow */
+h1 {
+    color: #ffd700;  /* yellow */
+}
+
+/* Heading 2 "Add a New Blog Post" in yellow */
+h2 {
+    color: #ffd700;  /* yellow */
+}
+
+/* Labels "Title:" and "Content:" in the new post form should be green */
+.blog-form label {
+    color: yellowgreen;
+}
+
+/* Back link button */
+.back-link {
+    display: inline-block;
+    margin-top: 50px;  /* increased space above the button */
+    padding: 8px 16px;
+    background-color: var(--dark-blue-bg);
+    color: var(--yellow-text);
+    border: 2px solid var(--yellow-text);
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover for back-link */
+.back-link:hover {
+    background-color: var(--yellow-text);
+    color: var(--dark-blue-bg);
+}
+
+/* Smaller buttons with margin below content */
+.back-link,
+.view-post-btn {
+    display: inline-block;
+    margin-top: 20px;  /* pushes button slightly down */
+    padding: 6px 12px; /* smaller padding for smaller size */
+    font-size: 0.9rem; /* slightly smaller font */
+    background-color: var(--dark-blue-bg);
+    color: var(--yellow-text);
+    border: 2px solid var(--yellow-text);
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover for smaller buttons */
+.back-link:hover,
+.view-post-btn:hover {
+    background-color: var(--yellow-text);
+    color: var(--dark-blue-bg);
+}
+
+/* Add New Post button wrapper */
+.add-new-post-wrapper {
+    display: flex;
+    justify-content: flex-end; /* push content (button) to the right */
+    margin-top: 40px;
+}
+
+/* Add New Post button */
+.add-new-post-btn {
+    padding: 10px 18px;
+    font-size: 1rem;
+    background-color: var(--dark-blue-bg);
+    color: var(--yellow-text);
+    border: 2px solid var(--yellow-text);
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.add-new-post-btn:hover {
+    background-color: var(--yellow-text);
+    color: var(--dark-blue-bg);
+}
+
+/* Optional clearfix for container if needed */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}

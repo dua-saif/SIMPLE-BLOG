@@ -1,0 +1,28 @@
+{% url 'post_list' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Blog - Posts</title>
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>All Blog Posts</h1>
+        <a href="{% url 'post_new' %}" class="btn">Add New Post</a>
+
+        <div class="post-list">
+            {% for post in posts %}
+                <div class="post-item">
+                    <h2>{{ post.title }}</h2>
+                    <div class="meta">{{ post.date|date:"M d, Y H:i" }}</div>
+                  <a href="{% url 'post_detail' post.pk %}" class="btn">View Post</a>
+
+                </div>
+            {% empty %}
+                <p>No posts yet.</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

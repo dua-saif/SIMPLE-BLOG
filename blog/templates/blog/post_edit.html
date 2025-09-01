@@ -1,0 +1,20 @@
+{% url 'post_list' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add New Post - Simple Blog</title>
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Add a New Blog Post</h1>
+        <form method="POST" class="blog-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn">Save</button>
+        </form>
+        <a href="{% url 'post_list' %}" class="back-link">Back to all posts</a>
+    </div>
+</body>
+</html>
