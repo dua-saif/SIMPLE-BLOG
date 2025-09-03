@@ -11,3 +11,4 @@ services:
         value: "3.10"
       - key: DATABASE_URL
         value: postgresql://neondb_owner:npg_cK2zJtlIMBH0@ep-restless-poetry-ago1z2ig-pooler.c-2.eu-central-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
+
